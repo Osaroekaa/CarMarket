@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String    @id @default(cuid())
+  name      String?
+  email     String    @unique
+  password  String?
+  image     String?
+  role      String    @default("user")
+  createdAt DateTime  @default(now())
+  listings  Listing[]
+  reviews   Review[]  @relation("ReviewAuthor")
+  received  Review[]  @relation("ReviewTarget")
+}
+
+model Listing {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Float
+  make        String
+  model       String
+  year        Int
+  mileage     Int
+  location    String
+  condition   String
+  images      String[]
+  status      String   @default("active")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+model Review {
+  id            String   @id @default(cuid())
+  rating        Int
+  accuracy      Int
+  communication Int
+  condition     Int
+  value         Int
+  comment       String
+  tags          String[]
+  createdAt     DateTime @default(now())
+  authorId      String
+  targetId      String
+  author        User     @relation("ReviewAuthor", fields: [authorId], references: [id])
+  target        User     @relation("ReviewTarget", fields: [targetId], references: [id])
+}
