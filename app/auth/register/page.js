@@ -29,7 +29,7 @@ export default function Register() {
         return
       }
 
-      router.push('/login')
+      router.push('/auth/login')
     } catch (err) {
       setError('Something went wrong. Please try again.')
       setLoading(false)
