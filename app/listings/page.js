@@ -17,9 +17,9 @@ export default function Listings() {
   })
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8 flex gap-6">
-      <div className="w-64 shrink-0">
-        <div className="bg-white rounded-xl border border-gray-200 p-4 sticky top-4">
+    <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col gap-6 sm:px-6 sm:py-8 md:flex-row">
+      <div className="w-full md:w-64 md:shrink-0">
+        <div className="bg-white rounded-xl border border-gray-200 p-4 md:sticky md:top-4">
           <h3 className="font-bold text-gray-800 mb-4">Filters</h3>
           <div className="mb-4">
             <label className="text-sm text-gray-500 mb-1 block">Make</label>
@@ -45,9 +45,9 @@ export default function Listings() {
         </div>
       </div>
 
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
         <p className="text-gray-500 mb-4">{filtered.length} cars found</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 2xl:grid-cols-3">
           {filtered.map((car) => (
             <Link href={`/listings/${car.id}`} key={car.id}>
               <div className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer h-72 group">

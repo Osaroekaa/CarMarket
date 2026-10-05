@@ -18,7 +18,7 @@ export default function ListingDetail() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-8">
+    <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6 sm:py-8">
       <Link href="/listings" className="text-blue-600 hover:underline text-sm mb-4 inline-block">
         ← Back to listings
       </Link>
@@ -26,7 +26,7 @@ export default function ListingDetail() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
         {/* Left: Image + specs */}
         <div className="lg:col-span-2">
-          <div className="relative h-96 w-full rounded-2xl overflow-hidden mb-6">
+          <div className="relative h-56 w-full rounded-2xl overflow-hidden mb-6 sm:h-96">
             <Image src={car.image} alt={car.title} fill className="object-cover" />
           </div>
 

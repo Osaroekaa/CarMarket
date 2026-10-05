@@ -6,12 +6,12 @@ export default function Navbar() {
   const { data: session, status } = useSession()
 
   return (
-    <nav className="bg-white shadow-md px-6 py-4 flex items-center justify-between">
-      <Link href="/" className="text-2xl font-bold text-blue-600">
+    <nav className="bg-white shadow-md px-4 py-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <Link href="/" className="self-start text-2xl font-bold text-blue-600">
         CarMarket
       </Link>
 
-      <div className="flex items-center gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:justify-end sm:gap-6">
         <Link href="/listings" className="text-gray-600 hover:text-blue-600 font-medium">
           Browse Cars
         </Link>

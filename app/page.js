@@ -14,18 +14,18 @@ export default function Home() {
 
   return (
     <div>
-      <div className="bg-blue-600 text-white py-16 px-6 text-center">
-        <h1 className="text-4xl font-bold mb-4">Find Your Perfect Car in Nigeria</h1>
-        <p className="text-blue-100 text-lg mb-8">Verified listings across Lagos, Abuja, Port Harcourt & more</p>
-        <div className="max-w-2xl mx-auto flex gap-3 bg-white rounded-xl p-2">
-          <input type="text" placeholder="Search by make, model, location..." className="flex-1 px-4 py-2 text-gray-700 outline-none rounded-lg"/>
+      <div className="bg-blue-600 text-white py-12 px-4 text-center sm:px-6 sm:py-16">
+        <h1 className="text-3xl font-bold mb-4 sm:text-4xl">Find Your Perfect Car in Nigeria</h1>
+        <p className="text-blue-100 text-base mb-8 sm:text-lg">Verified listings across Lagos, Abuja, Port Harcourt & more</p>
+        <div className="max-w-2xl mx-auto flex flex-col gap-2 bg-white rounded-xl p-2 sm:flex-row sm:gap-3">
+          <input type="text" placeholder="Search by make, model, location..." className="min-w-0 flex-1 px-4 py-2 text-gray-700 outline-none rounded-lg"/>
           <Link href="/listings" className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700">Search</Link>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-10">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">Recent Listings</h2>
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-10">
+        <div className="flex flex-wrap justify-between items-center gap-2 mb-6">
+          <h2 className="text-xl font-bold text-gray-800 sm:text-2xl">Recent Listings</h2>
           <Link href="/listings" className="text-blue-600 hover:underline font-medium">View all ({carsData.length}) →</Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -75,11 +75,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-blue-600 text-white py-12">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
-          <div><div className="text-4xl font-bold mb-2">{carsData.length}+</div><div className="text-blue-100">Active listings</div></div>
-          <div><div className="text-4xl font-bold mb-2">800+</div><div className="text-blue-100">Verified sellers</div></div>
-          <div><div className="text-4xl font-bold mb-2">500+</div><div className="text-blue-100">Cars sold</div></div>
+      <div className="bg-blue-600 text-white py-10 sm:py-12">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-6 px-4 text-center sm:grid-cols-3 sm:px-6">
+          <div><div className="text-3xl font-bold mb-2 sm:text-4xl">{carsData.length}+</div><div className="text-blue-100">Active listings</div></div>
+          <div><div className="text-3xl font-bold mb-2 sm:text-4xl">800+</div><div className="text-blue-100">Verified sellers</div></div>
+          <div><div className="text-3xl font-bold mb-2 sm:text-4xl">500+</div><div className="text-blue-100">Cars sold</div></div>
         </div>
       </div>
 
