@@ -16,11 +16,11 @@ export default function Home() {
     <div>
       <div className="bg-blue-600 text-white py-12 px-4 text-center sm:px-6 sm:py-16">
         <h1 className="text-3xl font-bold mb-4 sm:text-4xl">Find Your Perfect Car in Nigeria</h1>
-        <p className="text-blue-100 text-base mb-8 sm:text-lg">Verified listings across Lagos, Abuja, Port Harcourt & more</p>
-        <div className="max-w-2xl mx-auto flex flex-col gap-2 bg-white rounded-xl p-2 sm:flex-row sm:gap-3">
-          <input type="text" placeholder="Search by make, model, location..." className="min-w-0 flex-1 px-4 py-2 text-gray-700 outline-none rounded-lg"/>
-          <Link href="/listings" className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700">Search</Link>
-        </div>
+        <p className="text-blue-100 text-base mb-8 sm:text-lg">Explore cars for sale in Lagos, Abuja, Port Harcourt and more</p>
+        <form action="/listings" method="get" className="max-w-2xl mx-auto flex flex-col gap-2 bg-white rounded-xl p-2 sm:flex-row sm:gap-3">
+          <input name="search" type="search" placeholder="Search by make, model, location..." className="min-w-0 flex-1 px-4 py-2 text-gray-700 outline-none rounded-lg"/>
+          <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700">Search cars</button>
+        </form>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 sm:py-10">
@@ -65,9 +65,9 @@ export default function Home() {
                       {car.location}
                     </span>
                   </div>
-                  <button className="w-full bg-white text-gray-900 font-semibold py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-colors">
+                  <span className="block w-full bg-white text-center text-gray-900 font-semibold py-2.5 rounded-xl text-sm group-hover:bg-gray-100 transition-colors">
                     View Details
-                  </button>
+                  </span>
                 </div>
               </div>
             </Link>
@@ -77,14 +77,14 @@ export default function Home() {
 
       <div className="bg-blue-600 text-white py-10 sm:py-12">
         <div className="max-w-4xl mx-auto grid grid-cols-1 gap-6 px-4 text-center sm:grid-cols-3 sm:px-6">
-          <div><div className="text-3xl font-bold mb-2 sm:text-4xl">{carsData.length}+</div><div className="text-blue-100">Active listings</div></div>
-          <div><div className="text-3xl font-bold mb-2 sm:text-4xl">800+</div><div className="text-blue-100">Verified sellers</div></div>
-          <div><div className="text-3xl font-bold mb-2 sm:text-4xl">500+</div><div className="text-blue-100">Cars sold</div></div>
+          <div><div className="text-xl font-bold mb-2 sm:text-2xl">Find a car</div><div className="text-blue-100">Browse by make, price and location</div></div>
+          <div><div className="text-xl font-bold mb-2 sm:text-2xl">Compare options</div><div className="text-blue-100">Review prices, mileage and condition</div></div>
+          <div><div className="text-xl font-bold mb-2 sm:text-2xl">Sell your car</div><div className="text-blue-100">Create and manage your own listing</div></div>
         </div>
       </div>
 
       <footer className="bg-gray-800 text-gray-400 py-8 text-center">
-        <p className="text-sm">© 2024 CarMarket Nigeria. All rights reserved.</p>
+        <p className="text-sm">© 2026 CarMarket Nigeria. All rights reserved.</p>
       </footer>
     </div>
   )
